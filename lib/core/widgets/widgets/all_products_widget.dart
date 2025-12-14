@@ -11,7 +11,7 @@ class AllProductsWidget extends StatelessWidget {
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 150,
         ),
-        itemCount: 50,
+        itemCount: 20,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (index, reason) {
