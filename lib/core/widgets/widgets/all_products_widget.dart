@@ -10,6 +10,7 @@ class AllProductsWidget extends StatelessWidget {
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
+          mainAxisExtent: 240,
         ),
         itemCount: 10,
         shrinkWrap: true,
@@ -23,10 +24,7 @@ class AllProductsWidget extends StatelessWidget {
 }
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({
-    super.key,
-    required this.isDark,
-  });
+  const ProductCard({super.key, required this.isDark});
 
   final bool isDark;
 
@@ -35,9 +33,15 @@ class ProductCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        border:isDark ? Border() : Border.all(color: TColors.borderColorSoftGray, width: 1.0),
+        border: isDark
+            ? Border()
+            : Border.all(color: TColors.borderColorSoftGray, width: 1.0),
         color: isDark ? TColors.colorBlack : TColors.colorWhite,
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(16), bottomRight: Radius.circular(16), topRight: Radius.circular(16)),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(16),
+          bottomRight: Radius.circular(16),
+          topRight: Radius.circular(16),
+        ),
         boxShadow: [
           BoxShadow(
             spreadRadius: 0.7,
@@ -52,13 +56,19 @@ class ProductCard extends StatelessWidget {
         children: [
           Stack(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(16), bottomRight: Radius.circular(16), topRight: Radius.circular(16)),
-                child: Image.asset(
-                  'assets/images/Blender.jpg',
-                  height: 150,
-                  width: 180,
-                  fit: BoxFit.cover,
+              InkWell(
+                onTap: () {},
+                child: ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16),
+                  ),
+                  child: Image.asset(
+                    'assets/images/Flash Disks.jpg',
+                    height: 180,
+                    width: 180,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               Positioned(
@@ -89,18 +99,62 @@ class ProductCard extends StatelessWidget {
                   ),
                 ),
               ),
+              Positioned(
+                left: 4,
+                top: 4,
+                child: Container(
+                  decoration: BoxDecoration(),
+                  child: Text(
+                    '23% Discount',
+                    style: TextStyle().copyWith(
+                      color: TColors.warningColorGold,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
           Padding(
             padding: const EdgeInsets.only(left: 8.0),
+            child: Text(
+              'Hp 840G',
+              style: TextStyle().copyWith(
+                overflow: TextOverflow.ellipsis,
+                fontSize: 12,
+              ),
+              maxLines: 2,
+            ),
+          ),
+          SizedBox(width: 10),
+          Padding(
+            padding: const EdgeInsets.only(left: 4.0),
             child: Row(
               children: [
-                Text('Blender:'),
-                SizedBox(width: 10,),
-                Text('25700000/=', style: TextStyle().copyWith(overflow: TextOverflow.ellipsis), maxLines: 2,)
+                Expanded(
+                  child: Text(
+                    'UGX.2570000',
+                    style: TextStyle().copyWith(
+                      overflow: TextOverflow.ellipsis,
+                      fontSize: 10,
+                    ),
+                    maxLines: 1,
+                  ),
+                ),
+                SizedBox(width: 5),
+                Expanded(
+                  child: Text(
+                    'UGX.2570000',
+                    style: TextStyle().copyWith(
+                      overflow: TextOverflow.ellipsis,
+                      fontSize: 10,
+                      decoration: TextDecoration.lineThrough,
+                    ),
+                    maxLines: 1,
+                  ),
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

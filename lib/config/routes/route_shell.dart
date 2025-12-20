@@ -18,6 +18,11 @@ class RouteShell extends StatelessWidget {
       'icon': Icons.account_circle_sharp,
       'route': '/profile',
     },
+    {
+      'label': 'Admin',
+      'icon': Icons.manage_accounts_rounded,
+      'route': '/admin',
+    },
   ];
 
   int _getIndex(BuildContext context) {

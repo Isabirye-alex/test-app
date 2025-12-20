@@ -31,6 +31,10 @@ class AppRouter {
             path: '/profile',
             builder: (context, state) => Profile(),
           ),
+                              GoRoute(
+            path: '/admin',
+            builder: (context, state) => Profile(),
+          ),
         ],
       ),
     ],
