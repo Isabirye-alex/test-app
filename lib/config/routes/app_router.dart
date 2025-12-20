@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:test_app/admin/core/widgets/screens/admin.dart';
+import 'package:test_app/admin/admin_shell.dart';
 import 'package:test_app/config/routes/route_shell.dart';
 import 'package:test_app/core/widgets/screens/categories.dart';
 import 'package:test_app/core/widgets/screens/favorites.dart';
@@ -21,7 +21,7 @@ class AppRouter {
           ),
           GoRoute(path: '/favorites', builder: (context, state) => Favorites()),
           GoRoute(path: '/profile', builder: (context, state) => Profile()),
-          GoRoute(path: '/admin', builder: (context, state) => Admin()),
+          GoRoute(path: '/admin', builder: (context, state) => AdminShell()),
         ],
       ),
     ],

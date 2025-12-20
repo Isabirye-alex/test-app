@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/admin/pages/categories_page.dart';
+import 'package:test_app/admin/pages/dashboard_page.dart';
+import 'package:test_app/admin/pages/orders_page.dart';
+import 'package:test_app/admin/pages/products_page.dart';
+import 'package:test_app/admin/pages/users_page.dart';
 import 'package:test_app/config/theme/colors.dart';
 
 class AdminShell extends StatefulWidget {
@@ -12,11 +17,11 @@ class _AdminShellState extends State<AdminShell> {
   int selectedIndex = 0;
 
   final pages = const [
-    Center(child: Text('Dashboard')),
-    Center(child: Text('Products')),
-    Center(child: Text('Categories')),
-    Center(child: Text('Orders')),
-    Center(child: Text('Users')),
+    DashboardPage(),
+    ProductsPage(),
+    CategoriesPage(),
+    OrdersPage(),
+    UsersPage(),
   ];
 
   @override
@@ -33,12 +38,8 @@ class _AdminShellState extends State<AdminShell> {
               setState(() => selectedIndex = index);
             },
             labelType: NavigationRailLabelType.all,
-            backgroundColor: isDark
-                ? TColors.colorBlack
-                : TColors.colorWhite,
-            selectedIconTheme: IconThemeData(
-              color: TColors.primaryColorBlue,
-            ),
+            backgroundColor: isDark ? TColors.colorBlack : TColors.colorWhite,
+            selectedIconTheme: IconThemeData(color: TColors.primaryColorBlue),
             selectedLabelTextStyle: TextStyle(
               color: TColors.primaryColorBlue,
               fontWeight: FontWeight.w600,
@@ -72,12 +73,59 @@ class _AdminShellState extends State<AdminShell> {
             ],
           ),
 
-          /// Main Content
+          /// Main Area
           Expanded(
-            child: pages[selectedIndex],
+            child: Scaffold(
+              appBar: _buildAdminAppBar(isDark),
+              body: Padding(
+                padding: const EdgeInsets.all(16),
+                child: pages[selectedIndex],
+              ),
+            ),
           ),
         ],
       ),
+    );
+  }
+
+  AppBar _buildAdminAppBar(bool isDark) {
+    return AppBar(
+      automaticallyImplyLeading: false,
+      backgroundColor: isDark ? TColors.colorBlack : TColors.colorWhite,
+      elevation: 0,
+      title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Admin Dashboard',
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w600,
+              color: isDark ? TColors.colorWhite : TColors.colorBlack,
+            ),
+          ),
+          Text(
+            'Manage products, categories & orders',
+            style: TextStyle(fontSize: 13, color: TColors.disabledColorGray),
+          ),
+        ],
+      ),
+      actions: [
+        IconButton(
+          icon: Icon(
+            Icons.notifications_none,
+            color: isDark ? TColors.colorWhite : TColors.colorBlack,
+          ),
+          onPressed: () {},
+        ),
+        const SizedBox(width: 8),
+        CircleAvatar(
+          radius: 18,
+          backgroundColor: TColors.primaryColorBlue,
+          child: const Icon(Icons.person_outline, color: Colors.white),
+        ),
+        const SizedBox(width: 16),
+      ],
     );
   }
 }

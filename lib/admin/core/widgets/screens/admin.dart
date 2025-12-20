@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/admin/admin_shell.dart';
 import 'package:test_app/config/theme/colors.dart';
-import 'package:test_app/core/widgets/widgets/home_search_bar_widget.dart';
 
 class Admin extends StatelessWidget {
   const Admin({super.key});
@@ -12,7 +12,7 @@ class Admin extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        toolbarHeight: 120,
+        // toolbarHeight: 120,
         backgroundColor: isDark ? TColors.colorBlack : TColors.colorWhite,
         elevation: 0,
         title: Column(
@@ -68,35 +68,10 @@ class Admin extends StatelessWidget {
                 ),
               ],
             ),
-
-            const SizedBox(height: 12),
-
-            /// Search
-            SearchBarAndMenuIcon(isDark: isDark),
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton.icon(
-                onPressed: () {},
-                icon: Icon(Icons.add),
-                label: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text('Add Product'),
-                ),
-              ),
-            ),
-            Chip(
-              label: Text('ADMIN'),
-              backgroundColor: TColors.primaryColorBlue.withAlpha(100),
-            ),
-          ],
-        ),
-      ),
+      body: AdminShell(),
     );
   }
 }
