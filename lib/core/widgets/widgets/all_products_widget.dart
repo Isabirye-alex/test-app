@@ -9,65 +9,99 @@ class AllProductsWidget extends StatelessWidget {
     return SizedBox(
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 150,
+          maxCrossAxisExtent: 200,
         ),
-        itemCount: 20,
+        itemCount: 10,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (index, reason) {
-          return Container(
-            margin: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: isDark ? TColors.textWhite : TColors.textBlack,
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: [
-                BoxShadow(
-                  spreadRadius: 0.4,
-                  blurRadius: 0.2,
-                  offset: Offset(0.4, 0.0),
-                ),
-              ],
-            ),
-            child: Stack(
-              children: [
-                Image.asset(
+          return ProductCard(isDark: isDark);
+        },
+      ),
+    );
+  }
+}
+
+class ProductCard extends StatelessWidget {
+  const ProductCard({
+    super.key,
+    required this.isDark,
+  });
+
+  final bool isDark;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        border:isDark ? Border() : Border.all(color: TColors.borderColorSoftGray, width: 1.0),
+        color: isDark ? TColors.colorBlack : TColors.colorWhite,
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(16), bottomRight: Radius.circular(16), topRight: Radius.circular(16)),
+        boxShadow: [
+          BoxShadow(
+            spreadRadius: 0.7,
+            blurRadius: 0.6,
+            offset: Offset(0.4, 0.8),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(16), bottomRight: Radius.circular(16), topRight: Radius.circular(16)),
+                child: Image.asset(
                   'assets/images/Blender.jpg',
-                  height: 180,
+                  height: 150,
                   width: 180,
                   fit: BoxFit.cover,
                 ),
-                Positioned(
-                  top: 5,
-                  right: 0,
-                  child: InkWell(
-                    onTap: () {},
-                    child: Icon(Icons.favorite_border, color: Colors.amber),
-                  ),
+              ),
+              Positioned(
+                top: 5,
+                right: 0,
+                child: InkWell(
+                  onTap: () {},
+                  child: Icon(Icons.favorite_border, color: Colors.amber),
                 ),
-                Positioned(
-                  bottom: 2,
-                  right: 2,
-                  child: InkWell(
-                    onTap: () {},
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(12),
-                          bottomRight: Radius.circular(12),
-                        ),
+              ),
+              Positioned(
+                bottom: 2,
+                right: 2,
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(12),
                       ),
-                      child: Icon(
-                        Icons.add,
-                        color: isDark ? Colors.white : Colors.black,
-                      ),
+                    ),
+                    child: Icon(
+                      Icons.add,
+                      color: isDark ? Colors.white : Colors.black,
                     ),
                   ),
                 ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Row(
+              children: [
+                Text('Blender:'),
+                SizedBox(width: 10,),
+                Text('25700000/=', style: TextStyle().copyWith(overflow: TextOverflow.ellipsis), maxLines: 2,)
               ],
             ),
-          );
-        },
+          )
+        ],
       ),
     );
   }

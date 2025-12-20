@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ProductsCard extends StatelessWidget {
-  const ProductsCard({super.key, required this.isDark});
+class FeaturedProductsCard extends StatelessWidget {
+  const FeaturedProductsCard({super.key, required this.isDark});
   final bool isDark;
   @override
   Widget build(BuildContext context) {

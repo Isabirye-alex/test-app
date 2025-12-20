@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/config/theme/colors.dart';
 
 class TAppBarTheme {
   TAppBarTheme._();
@@ -8,14 +9,14 @@ class TAppBarTheme {
     elevation: 70,
     centerTitle: false,
     scrolledUnderElevation: 0,
-    backgroundColor: Colors.white,
-    surfaceTintColor: Colors.white,
-    iconTheme: IconThemeData(color: Colors.black, size: 24),
-    actionsIconTheme: IconThemeData(color: Colors.black, size: 24),
+    backgroundColor: TColors.colorWhite,
+    surfaceTintColor: TColors.colorWhite,
+    iconTheme: IconThemeData(color: TColors.colorBlack, size: 24),
+    actionsIconTheme: IconThemeData(color: TColors.colorBlack, size: 24),
     titleTextStyle: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w600,
-      color: Colors.black,
+      color: TColors.colorBlack,
     ),
   );
 
@@ -24,14 +25,14 @@ class TAppBarTheme {
     elevation: 70,
     centerTitle: false,
     scrolledUnderElevation: 0,
-    backgroundColor: Colors.black,
-    surfaceTintColor: Colors.black,
-    iconTheme: IconThemeData(color: Colors.white, size: 24),
-    actionsIconTheme: IconThemeData(color: Colors.white, size: 24),
+    backgroundColor: TColors.colorBlack,
+    surfaceTintColor: TColors.colorBlack,
+    iconTheme: IconThemeData(color: TColors.colorWhite, size: 24),
+    actionsIconTheme: IconThemeData(color: TColors.colorWhite, size: 24),
     titleTextStyle: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: TColors.colorWhite,
     ),
   );
 }

@@ -20,14 +20,14 @@ class SearchBarAndMenuIcon extends StatelessWidget {
             decoration: InputDecoration(
               prefixIcon: Icon(
                 Iconsax.search_normal_14,
-                color: isDark ? TColors.textWhite : TColors.textBlack,
+                color: isDark ? TColors.colorWhite : TColors.colorBlack,
               ),
               suffixIcon: Icon(Icons.mic_none_outlined),
               filled: true,
               fillColor: isDark ? Colors.white10 : Colors.grey.shade200,
               hintText: 'Search',
               hintStyle: TextStyle().copyWith(
-                color: isDark ? TColors.textWhite : TColors.textBlack,
+                color: isDark ? TColors.colorWhite : TColors.colorBlack,
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(34),

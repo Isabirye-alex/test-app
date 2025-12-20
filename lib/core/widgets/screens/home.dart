@@ -21,14 +21,14 @@ class Home extends StatelessWidget {
                       'Hello,',
                       style: TextStyle().copyWith(
                         fontSize: 14,
-                        color: isDark ? Colors.white24 : Colors.grey,
+                        color: isDark ? TColors.colorWhite : TColors.disabledColorGray,
                       ),
                     ),
                     Text(
                       'Welcome',
                       style: TextStyle().copyWith(
                         fontSize: 24,
-                        color: isDark ? TColors.textWhite : TColors.textBlack,
+                        color: isDark ? TColors.colorWhite : TColors.colorBlack,
                       ),
                     ),
                   ],

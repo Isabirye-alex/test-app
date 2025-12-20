@@ -3,7 +3,7 @@ import 'package:test_app/core/widgets/widgets/all_products_widget.dart';
 import 'package:test_app/core/widgets/widgets/big_sale_carousel_slider.dart';
 import 'package:test_app/core/widgets/widgets/categories_heading.dart';
 import 'package:test_app/core/widgets/widgets/circular_containers.dart';
-import 'package:test_app/core/widgets/widgets/products_card.dart';
+import 'package:test_app/core/widgets/widgets/featured_products_card.dart';
 
 class HomeBodyWidget extends StatelessWidget {
   const HomeBodyWidget({super.key});
@@ -26,7 +26,7 @@ class HomeBodyWidget extends StatelessWidget {
             SizedBox(height: 10),
             CategoriesHeading(isDark: isDark, text: 'Featured'),
             SizedBox(height: 10),
-            ProductsCard(isDark: isDark),
+            FeaturedProductsCard(isDark: isDark),
             SizedBox(height: 10),
             CategoriesHeading(isDark: isDark, text: 'Curated For You'),
             AllProductsWidget(isDark: isDark),

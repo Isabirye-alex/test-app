@@ -19,7 +19,7 @@ class CategoriesHeading extends StatelessWidget {
               style: TextStyle().copyWith(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: isDark ? TColors.textWhite : TColors.textBlack,
+                color: isDark ? TColors.colorWhite : TColors.colorBlack,
               ),
             ),
           ),
@@ -34,7 +34,7 @@ class CategoriesHeading extends StatelessWidget {
               ),
               Icon(
                 Icons.arrow_right_alt_sharp,
-                color: isDark ? TColors.textWhite : TColors.textBlack,
+                color: isDark ? TColors.colorWhite : TColors.colorBlack,
               ),
             ],
           ),

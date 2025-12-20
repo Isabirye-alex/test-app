@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/config/theme/colors.dart';
 
 class TOutlinedButtonTheme {
   TOutlinedButtonTheme._();
@@ -23,7 +24,7 @@ class TOutlinedButtonTheme {
 
     foregroundColor: WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.disabled)) return Colors.grey;
-      return Colors.blue;
+      return TColors.primaryColorBlue;
     }),
 
     overlayColor: WidgetStateProperty.resolveWith((states) {
@@ -33,7 +34,7 @@ class TOutlinedButtonTheme {
       if (states.contains(WidgetState.hovered)) {
         return Colors.blue.withAlpha(70);
       }
-      return Colors.transparent;
+      return TColors.colorBlack;
     }),
 
     padding: WidgetStateProperty.all(
@@ -60,12 +61,12 @@ static OutlinedButtonThemeData darkOutlinedButtonTheme = OutlinedButtonThemeData
 
     side: WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.disabled)) {
-        return const BorderSide(color: Colors.grey, width: 1);
+        return const BorderSide(color: TColors.disabledColorGray, width: 1);
       }
       if (states.contains(WidgetState.pressed)) {
-        return const BorderSide(color: Colors.lightBlueAccent, width: 1.5);
+        return const BorderSide(color: TColors.lifestyleColorSereneBlue, width: 1.5);
       }
-      return const BorderSide(color: Colors.lightBlueAccent, width: 1);
+      return const BorderSide(color: TColors.lifestyleColorSereneBlue, width: 1);
     }),
 
     foregroundColor: WidgetStateProperty.resolveWith((states) {
