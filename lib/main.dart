@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import "package:flutter/material.dart";
-import "package:test_app/config/routes/app_router.dart";
-import "package:test_app/config/theme/app_theme.dart";
+import "package:test_app/routes/app_router.dart";
+import "package:test_app/core/theme/app_theme.dart";
 
 void main() {
   runApp(ProviderScope(child: TestApp()));
