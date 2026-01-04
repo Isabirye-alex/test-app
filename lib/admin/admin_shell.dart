@@ -31,14 +31,18 @@ class _AdminShellState extends State<AdminShell> {
     return Scaffold(
       body: Row(
         children: [
-          /// Sidebar
+          //Sidebar
           NavigationRail(
+            leadingAtTop: true,
+            elevation: 70,
             selectedIndex: selectedIndex,
             onDestinationSelected: (index) {
               setState(() => selectedIndex = index);
             },
             labelType: NavigationRailLabelType.all,
-            backgroundColor: isDark ? TColors.colorBlack : TColors.colorWhite,
+            backgroundColor: isDark
+                ? TColors.backgroundColorOffWhite
+                : TColors.disabledColorGray,
             selectedIconTheme: IconThemeData(color: TColors.primaryColorBlue),
             selectedLabelTextStyle: TextStyle(
               color: TColors.primaryColorBlue,
@@ -73,7 +77,7 @@ class _AdminShellState extends State<AdminShell> {
             ],
           ),
 
-          /// Main Area
+          // Main Area
           Expanded(
             child: Scaffold(
               appBar: _buildAdminAppBar(isDark),
@@ -87,6 +91,10 @@ class _AdminShellState extends State<AdminShell> {
       ),
     );
   }
+
+
+
+
 
   AppBar _buildAdminAppBar(bool isDark) {
     return AppBar(

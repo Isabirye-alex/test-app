@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/admin/forms/category_form.dart';
 
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({super.key});
@@ -16,7 +17,15 @@ class CategoriesPage extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineSmall,
             ),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  barrierDismissible: true,
+                  context: context,
+                  builder: (_) => Dialog(
+                    child: SizedBox(width: 450, child: CategoryForm()),
+                  ),
+                );
+              },
               icon: Icon(Icons.add),
               label: Text('Add Category'),
             ),
@@ -47,14 +56,8 @@ class CategoriesPage extends StatelessWidget {
                   DataCell(
                     Row(
                       children: [
-                        IconButton(
-                          icon: Icon(Icons.edit),
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.delete),
-                          onPressed: () {},
-                        ),
+                        IconButton(icon: Icon(Icons.edit), onPressed: () {}),
+                        IconButton(icon: Icon(Icons.delete), onPressed: () {}),
                       ],
                     ),
                   ),
