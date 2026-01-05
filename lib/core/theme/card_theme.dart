@@ -8,7 +8,7 @@ class TCardTheme {
     color: TColors.colorWhite,
     elevation: 20,
     margin: EdgeInsets.zero,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+    // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
     surfaceTintColor: Colors.black,
   );
 
@@ -16,7 +16,7 @@ class TCardTheme {
     color: Colors.white,
     elevation: 20,
     margin: EdgeInsets.zero,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+    // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
     surfaceTintColor: Colors.black,
   );
 }
