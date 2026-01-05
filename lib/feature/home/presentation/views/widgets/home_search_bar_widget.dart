@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../core/theme/colors.dart';
+import '../../../../../core/theme/colors.dart';
 
 class SearchBarAndMenuIcon extends StatelessWidget {
   const SearchBarAndMenuIcon({

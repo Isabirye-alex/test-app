@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/core/theme/colors.dart';
-import 'package:test_app/feature/home/presentation/viewmodels/home_body_widget.dart';
-import 'package:test_app/feature/home/presentation/viewmodels/home_search_bar_widget.dart';
+import 'package:test_app/feature/home/presentation/views/widgets/home_body_widget.dart';
+import 'package:test_app/feature/home/presentation/views/widgets/home_search_bar_widget.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

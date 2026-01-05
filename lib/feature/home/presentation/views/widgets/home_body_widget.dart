@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/feature/home/presentation/viewmodels/all_products_widget.dart';
-import 'package:test_app/feature/home/presentation/viewmodels/big_sale_carousel_slider.dart';
-import 'package:test_app/feature/home/presentation/viewmodels/categories_heading.dart';
-import 'package:test_app/feature/home/presentation/viewmodels/category_horizontal_grid.dart';
-import 'package:test_app/feature/home/presentation/viewmodels/featured_products_card.dart';
+import 'package:test_app/feature/home/presentation/views/widgets/all_products_widget.dart';
+import 'package:test_app/feature/home/presentation/views/widgets/big_sale_carousel_slider.dart';
+import 'package:test_app/feature/home/presentation/views/widgets/categories_heading.dart';
+import 'package:test_app/feature/home/presentation/views/widgets/category_horizontal_grid.dart';
+import 'package:test_app/feature/home/presentation/views/widgets/featured_products_card.dart';
 
 class HomeBodyWidget extends StatelessWidget {
   const HomeBodyWidget({super.key});
@@ -29,7 +29,7 @@ class HomeBodyWidget extends StatelessWidget {
             FeaturedProductsCard(isDark: isDark),
             SizedBox(height: 10),
             CategoriesHeading(isDark: isDark, text: 'Curated For You'),
-            AllProductsWidget(isDark: isDark),
+            AllProductsWidget(),
           ],
         ),
       ),

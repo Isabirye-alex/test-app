@@ -11,14 +11,11 @@ class CategoryRepositoryImp implements CategoryRepository {
   Future<List<CategoryModel>> getCategories() async {
     try {
       debugPrint('Fetching Categories');
-      debugPrint('Calling URL: ${ApiConstant.apiUrl}/categories/all');
       final response = await http.get(
         Uri.parse('${ApiConstant.apiUrl}/categories/all'),
       ).timeout(Duration(seconds: 10));
       if (response.statusCode == 200) {
         final List<dynamic> data = jsonDecode(response.body);
-        debugPrint('$data');
-        
         return data.map((c) => CategoryModel.fromJson(c)).toList();
       } else {
         throw Exception(
