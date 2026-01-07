@@ -142,7 +142,7 @@ class AllProductsWidget extends ConsumerWidget {
                                       decoration: TextDecoration.lineThrough,
                                       decorationStyle:
                                           TextDecorationStyle.solid,
-                                      decorationColor: TColors.colorBlack,
+                                      decorationColor: TColors.buyNowColorGreen,
                                       decorationThickness: 1,
                                     ),
                                   )

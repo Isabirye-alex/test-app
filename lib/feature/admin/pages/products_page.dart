@@ -19,9 +19,7 @@ class ProductsPage extends StatelessWidget {
           SizedBox(width: 16),
         ],
       ),
-      body: Center(
-        child: Text('Products list here'),
-      ),
+      body: Center(child: Text('Products list here')),
     );
   }
 }

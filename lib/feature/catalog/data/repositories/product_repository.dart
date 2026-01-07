@@ -5,7 +5,7 @@ import 'package:test_app/core/constants/api_constant.dart';
 import 'package:test_app/feature/catalog/data/models/product_model.dart';
 import 'package:test_app/feature/catalog/domain/repositories/product_repository.dart';
 
-class ProductRepositoryImp extends ProductRepository {
+class ProductRepositoryImp implements ProductRepository {
   @override
   Future<List<ProductModel>> getProducts() async {
     try {

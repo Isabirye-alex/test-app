@@ -41,8 +41,8 @@ class _AdminShellState extends State<AdminShell> {
             },
             labelType: NavigationRailLabelType.all,
             backgroundColor: isDark
-                ? TColors.backgroundColorOffWhite
-                : TColors.disabledColorGray,
+                ? const Color.fromARGB(255, 45, 45, 198)
+                : TColors.colorBlack,
             selectedIconTheme: IconThemeData(color: TColors.primaryColorBlue),
             selectedLabelTextStyle: TextStyle(
               color: TColors.primaryColorBlue,
@@ -82,7 +82,7 @@ class _AdminShellState extends State<AdminShell> {
             child: Scaffold(
               appBar: _buildAdminAppBar(isDark),
               body: Padding(
-                padding: const EdgeInsets.all(16),
+                padding: EdgeInsets.zero,
                 child: pages[selectedIndex],
               ),
             ),
@@ -91,10 +91,6 @@ class _AdminShellState extends State<AdminShell> {
       ),
     );
   }
-
-
-
-
 
   AppBar _buildAdminAppBar(bool isDark) {
     return AppBar(

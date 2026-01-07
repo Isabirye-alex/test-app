@@ -11,7 +11,7 @@ class TElevatedButtonTheme {
       backgroundColor: TColors.primaryColorBlue,
       disabledBackgroundColor: TColors.disabledColorGray,
       side: BorderSide(color: TColors.primaryColorBlue),
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.all(8),
       textStyle: TextStyle(fontSize: 16, color: TColors.colorWhite, fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(12))
     )
@@ -23,7 +23,7 @@ class TElevatedButtonTheme {
       backgroundColor: TColors.primaryColorBlue,
       disabledBackgroundColor: TColors.disabledColorGray,
       side: BorderSide(color: TColors.primaryColorBlue),
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.all(8),
       textStyle: TextStyle(fontSize: 16, color: TColors.colorWhite, fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(12))
     )
